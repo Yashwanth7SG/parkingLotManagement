@@ -28,7 +28,7 @@ import io.realm.mongodb.mongo.MongoDatabase;
 
 public class MainActivity extends AppCompatActivity {
     public static App app;
-    public static AtomicReference<User> user;
+
     private static String email ="yashwanth@student.tce.edu";
     private static String password="yashw#123@";
     @Override
@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
         Credentials emailPasswordCredentials = Credentials.emailPassword("sksganeshbabu12467@gmail.com","Yashwanth");
         app.loginAsync(emailPasswordCredentials,it->{
             if (it.isSuccess()) {
-                user.set(app.currentUser());
-                Log.v("AUTH", "Successfully authenticated using an email and password.");
+
+
 
                 Toast.makeText(MainActivity.this,"Succesfully login",Toast.LENGTH_SHORT).show();
-
+                Log.v("AUTH", "Successfully authenticated using an email and password.");
 
             } else {
                 Toast.makeText(MainActivity.this,it.getError().toString(),Toast.LENGTH_SHORT).show();
